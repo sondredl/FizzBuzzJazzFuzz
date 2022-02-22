@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System;
-using Rule = Rules.Rules;
+using Rule = Rules;
+using Word = BuzzWords;
 
 Main();
 
@@ -18,15 +19,15 @@ public class Game
         {
             if (Rule.divisibleByFifteen(i))
             {
-                Console.WriteLine(Rule.FizzBuzz());
+                Console.WriteLine(Word.FizzBuzz());
             }
             else if (Rule.divisibleByThree(i))
             {
-                Console.WriteLine(Rule.Fizz());
+                Console.WriteLine(Word.Fizz());
             }
             else if (Rule.divisibleByFive(i))
             {
-                Console.WriteLine(Rule.Buzz());
+                Console.WriteLine(Word.Buzz());
             }
             else
                 Console.WriteLine(i);
