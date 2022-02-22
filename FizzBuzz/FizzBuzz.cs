@@ -1,42 +1,35 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System;
-using Rules;
+using Rule = Rules.Rules;
 
 Main();
 
 static void Main()
 {
     Game game = new Game();
-    Game.dummyFunc();
+    game.iterator();
 }
 
 public class Game
 {
-    private static string fizz = "fizz";
-    private static string buzz = "buzz";
-    private static bool switching = false;
-
-    public void print(string str)
+    public void iterator()
     {
-        Console.WriteLine(str);
-    }
-
-    public static void dummyFunc()
-    {
-        for (int i = 0; i < 10; i++)
+        for (int i = 1; i < 20; i++)
         {
-            if (switching)
+            if (Rule.divisibleByFifteen(i))
             {
-                Console.WriteLine("fizz");
-                switching = !switching;
-                Rules.Rules.Fizz();
+                Console.WriteLine(Rule.FizzBuzz());
+            }
+            else if (Rule.divisibleByThree(i))
+            {
+                Console.WriteLine(Rule.Fizz());
+            }
+            else if (Rule.divisibleByFive(i))
+            {
+                Console.WriteLine(Rule.Buzz());
             }
             else
-            {
-                Console.WriteLine("buzz");
-                Rules.Rules.Buzz();
-                switching = !switching;
-            }
+                Console.WriteLine(i);
         }
     }
 }
