@@ -9,7 +9,7 @@ C:\Users\sondr\Documents\GitHub\FizzBuzzJazzBuzz\FizzBuzz\obj\Debug\net6.0\FizzB
 C:\Users\sondr\Documents\GitHub\FizzBuzzJazzBuzz\FizzBuzz\obj\Debug\net6.0\FizzBuzz.AssemblyInfo.cs
 C:\Users\sondr\Documents\GitHub\FizzBuzzJazzBuzz\FizzBuzz\obj\Debug\net6.0\FizzBuzz.csproj.CoreCompileInputs.cache
 C:\Users\sondr\Documents\GitHub\FizzBuzzJazzBuzz\FizzBuzz\obj\Debug\net6.0\FizzBuzz.dll
-C:\Users\sondr\Documents\GitHub\FizzBuzzJazzBuzz\FizzBuzz\obj\Debug\net6.0\refint\FizzBuzz.dll
 C:\Users\sondr\Documents\GitHub\FizzBuzzJazzBuzz\FizzBuzz\obj\Debug\net6.0\FizzBuzz.pdb
 C:\Users\sondr\Documents\GitHub\FizzBuzzJazzBuzz\FizzBuzz\obj\Debug\net6.0\FizzBuzz.genruntimeconfig.cache
 C:\Users\sondr\Documents\GitHub\FizzBuzzJazzBuzz\FizzBuzz\obj\Debug\net6.0\ref\FizzBuzz.dll
+C:\Users\sondr\Documents\GitHub\FizzBuzzJazzBuzz\FizzBuzz\bin\Debug\net6.0\ref\FizzBuzz.dll

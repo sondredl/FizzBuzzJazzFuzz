@@ -1,31 +1,43 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System;
+using Rules;
 
-public class Game : Rules 
+Main();
+
+static void Main()
 {
+    Game game = new Game();
+    Game.dummyFunc();
+}
 
+public class Game
+{
+    private static string fizz = "fizz";
+    private static string buzz = "buzz";
+    private static bool switching = false;
 
-static public class Rules(Game game){ 
-    public static string fizz;// = "fizz";
-    public static string buzz = "buzz";
-    public static bool switching = false;
-     public static void dummyFunc()
+    public void print(string str)
     {
+        Console.WriteLine(str);
+    }
 
-        for (int i = 0; i < 10; i++) {
-            if (switching) {
-                Console.WriteLine(fizz);
+    public static void dummyFunc()
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            if (switching)
+            {
+                Console.WriteLine("fizz");
                 switching = !switching;
-            } else {
-                Console.WriteLine(buzz);
+                Rules.Rules.Fizz();
+            }
+            else
+            {
+                Console.WriteLine("buzz");
+                Rules.Rules.Buzz();
                 switching = !switching;
             }
         }
     }
-
-    public static void main() { 
-        dummyFunc();
-    }
 }
 
-}

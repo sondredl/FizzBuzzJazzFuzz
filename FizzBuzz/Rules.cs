@@ -1,9 +1,16 @@
 ﻿using System;
 
-namespace Rules { 
-    public class Rules {
-	public Rules() { }
-	private void Fizz() { }
-	private void Buzz() { }
-	}
+namespace Rules
+{
+    public class Rules
+    {
+        static public void Fizz()
+        {
+            Console.WriteLine("fizz");
+        }
+        static public void Buzz()
+        {
+            Console.WriteLine("buzz");
+        }
+    }
 }

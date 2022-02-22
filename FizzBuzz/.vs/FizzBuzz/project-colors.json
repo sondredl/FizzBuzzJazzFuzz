@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "9f2a9280-e421-4958-9ce7-7d392fe580cf": {
+      "ProjectGuid": "9f2a9280-e421-4958-9ce7-7d392fe580cf",
+      "DisplayName": "Solution Items",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "45d0f2d4-40fd-45ff-8427-a9fc4e55d1de": {
+      "ProjectGuid": "45d0f2d4-40fd-45ff-8427-a9fc4e55d1de",
+      "DisplayName": "FizzBuzz",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}
