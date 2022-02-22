@@ -1,10 +1,9 @@
 ﻿using System;
 
-public class Rules
-{
-	public Rules()
-	{
-	}
+namespace Rules { 
+    public class Rules {
+	public Rules() { }
 	private void Fizz() { }
 	private void Buzz() { }
+	}
 }
