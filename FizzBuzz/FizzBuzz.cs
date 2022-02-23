@@ -4,7 +4,7 @@ Main();
 
 static void Main()
 {
-    //del_1();
+    del_1();
     del_2();
 }
 
