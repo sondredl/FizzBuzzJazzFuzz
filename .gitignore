@@ -27,3 +27,4 @@ FizzBuzz/obj/project.nuget.cache
 FizzBuzz/UpgradeLog.htm
 FizzBuzz/FizzBuzz.csproj
 FizzBuzz/FizzBuzz.sln
+*.dll
