@@ -14,11 +14,11 @@ namespace FizzBuzz
                 {
                     Console.WriteLine(Word.FizzBuzz());
                 }
-                else if (Rule.DivisibleByThree(i))
+                else if (Rule.DivisibleByThree(i) & !Rule.DivisibleByFive(i))
                 {
                     Console.WriteLine(Word.Fizz());
                 }
-                else if (Rule.DivisibleByFive(i))
+                else if (Rule.DivisibleByFive(i) & !Rule.DivisibleByThree(i))
                 {
                     Console.WriteLine(Word.Buzz());
                 }
