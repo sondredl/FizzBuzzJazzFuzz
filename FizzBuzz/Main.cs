@@ -8,20 +8,20 @@ static void Main()
     int iteratorSize = 100;
 
     Game game_1 = new Game();
-    Game.del_1(game_1, iteratorSize);
+    Game.Del_1(game_1, iteratorSize);
 
     Game game_2 = new Game();
-    Game.del_2(game_2, iteratorSize);
+    Game.Del_2(game_2, iteratorSize);
 }
 public class Game
 {
-    public static void del_1(Game game, int iteratorSize)
+    public static void Del_1(Game game, int iteratorSize)
     {
 
         Game.Iterator(iteratorSize);
     }
 
-    public static void del_2(Game game, int iteratorSize)
+    public static void Del_2(Game game, int iteratorSize)
     {
         Game.Iterator(iteratorSize);
         ReverseIterator(iteratorSize);
