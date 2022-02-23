@@ -19,7 +19,7 @@ public class Game
     {
         for (int i = 1; i < iteratorSize; i++)
         {
-            if (Rule.divisibleByFifteen(i))
+            if (Rule.divisibleByThree(i) && Rule.divisibleByFive(i))
             {
                 Console.WriteLine(Word.FizzBuzz());
             }
@@ -34,10 +34,8 @@ public class Game
             else
                 Console.WriteLine(i);
         }
-
-        Console.WriteLine("Iteration limit reached");
-        //reverseIterator();
     }
+
     public void reverseIterator()
     {
         for (int i = iteratorSize; i > 1; i--)
