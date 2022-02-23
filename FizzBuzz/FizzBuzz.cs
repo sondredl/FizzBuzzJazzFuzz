@@ -8,12 +8,12 @@ Main();
 static void Main()
 {
     Game game = new Game();
-    game.iterator();
+    Game.Iterator();
 }
 
 public class Game
 {
-    public void iterator()
+    public static void Iterator()
     {
         for (int i = 1; i < 20; i++)
         {
