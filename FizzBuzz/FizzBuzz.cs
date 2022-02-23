@@ -8,14 +8,14 @@ Main();
 static void Main()
 {
     Game game = new Game();
-    game.Iterator();
-    game.ReverseIterator();
+    Game.Iterator();
+    Game.ReverseIterator();
 }
 
 public class Game
 {
-    private int iteratorSize = 100;
-    public void Iterator()
+    private static int iteratorSize = 100;
+    public static void Iterator()
     {
         for (int i = 1; i < iteratorSize; i++)
         {
@@ -36,7 +36,7 @@ public class Game
         }
     }
 
-    public void ReverseIterator()
+    public static void ReverseIterator()
     {
         for (int i = iteratorSize; i > 1; i--)
         {
