@@ -8,14 +8,14 @@ Main();
 static void Main()
 {
     Game game = new Game();
-    game.iterator();
-    game.reverseIterator();
+    game.Iterator();
+    game.ReverseIterator();
 }
 
 public class Game
 {
     private int iteratorSize = 100;
-    public void iterator()
+    public void Iterator()
     {
         for (int i = 1; i < iteratorSize; i++)
         {
@@ -36,7 +36,7 @@ public class Game
         }
     }
 
-    public void reverseIterator()
+    public void ReverseIterator()
     {
         for (int i = iteratorSize; i > 1; i--)
         {
