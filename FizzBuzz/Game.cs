@@ -1,5 +1,5 @@
 ﻿using Rule = Rules;
-using Word = BuzzWords;
+using Word = FizzBuzz.BuzzWords;
 
 namespace FizzBuzz
 {
@@ -10,15 +10,15 @@ namespace FizzBuzz
         {
             for (int i = 1; i < iteratorSize; i++)
             {
-                if (Rule.divisibleByThree(i) && Rule.divisibleByFive(i))
+                if (Rule.DivisibleByThree(i) && Rule.DivisibleByFive(i))
                 {
                     Console.WriteLine(Word.FizzBuzz());
                 }
-                else if (Rule.divisibleByThree(i))
+                else if (Rule.DivisibleByThree(i))
                 {
                     Console.WriteLine(Word.Fizz());
                 }
-                else if (Rule.divisibleByFive(i))
+                else if (Rule.DivisibleByFive(i))
                 {
                     Console.WriteLine(Word.Buzz());
                 }
@@ -31,11 +31,11 @@ namespace FizzBuzz
         {
             for (int i = iteratorSize; i > 1; i--)
             {
-                if (Rule.divisibleByNine(i))
+                if (Rule.DivisibleByNine(i))
                 {
                     Console.WriteLine(Word.Jazz());
                 }
-                else if (Rule.divisibleByFour(i))
+                else if (Rule.DivisibleByFour(i))
                 {
                     Console.WriteLine(Word.Fuzz());
                 }
