@@ -1,47 +1,54 @@
-﻿using Rule = Rules;
-using Word = BuzzWords;
-
+﻿
 namespace FizzBuzz
 {
-    public class Game
+
+    public class Rules
     {
-        private static readonly int iteratorSize = 100;
-        public static void Iterator()
+        static public bool DivisibleByThree(int i)
         {
-            for (int i = 1; i < iteratorSize; i++)
-            {
-                if (Rule.divisibleByThree(i) && Rule.divisibleByFive(i))
-                {
-                    Console.WriteLine(Word.FizzBuzz());
-                }
-                else if (Rule.divisibleByThree(i))
-                {
-                    Console.WriteLine(Word.Fizz());
-                }
-                else if (Rule.divisibleByFive(i))
-                {
-                    Console.WriteLine(Word.Buzz());
-                }
-                else
-                    Console.WriteLine(i);
-            }
+            return i % 3 == 0;
         }
 
-        public static void ReverseIterator()
+        static public bool DivisibleByFour(int i)
         {
-            for (int i = iteratorSize; i > 1; i--)
-            {
-                if (Rule.divisibleByNine(i))
-                {
-                    Console.WriteLine(Word.Jazz());
-                }
-                else if (Rule.divisibleByFour(i))
-                {
-                    Console.WriteLine(Word.Fuzz());
-                }
-                else
-                    Console.WriteLine(i);
-            }
+            return i % 4 == 0;
+        }
+
+        static public bool DivisibleByFive(int i)
+        {
+            return i % 5 == 0;
+        }
+
+        static public bool DivisibleByNine(int i)
+        {
+            return i % 9 == 0;
+        }
+    }
+    public class BuzzWords
+    {
+        public static string Fizz()
+        {
+            return "fizz";
+        }
+
+        public static string Buzz()
+        {
+            return "buzz";
+        }
+
+        public static string FizzBuzz()
+        {
+            return "fizz buzz";
+        }
+
+        public static string Jazz()
+        {
+            return "jazz";
+        }
+
+        public static string Fuzz()
+        {
+            return "fuzz";
         }
     }
 }
