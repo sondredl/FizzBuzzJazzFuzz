@@ -1,6 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-using System;
-using Rule = Rules;
+﻿using Rule = Rules;
 using Word = BuzzWords;
 
 Main();
