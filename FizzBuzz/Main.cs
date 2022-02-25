@@ -1,35 +1,38 @@
-﻿using Rule = Rules;
+﻿using Rule = FizzBuzz.Rules;
 using Word = BuzzWords;
 
-Main();
-
-static void Main()
+namespace FizzBuzz
 {
-    Game game = new Game();
-    Game.Iterator();
-}
-
-public class Game
-{
-    public static void Iterator()
+    public static class Program
     {
-        for (int i = 1; i < 20; i++)
+        private static void Main()
         {
-            if (Rule.divisibleByFifteen(i))
+            Game game = new Game();
+            Game.Iterator();
+        }
+
+    }
+    public class Game
+    {
+        public static void Iterator()
+        {
+            for (int i = 1; i < 20; i++)
             {
-                Console.WriteLine(Word.FizzBuzz());
+                if (Rule.DivisibleByThree(i))
+                {
+                    Console.WriteLine(Word.Fizz());
+                }
+                if (Rule.DivisibleByFive(i))
+                {
+                    Console.WriteLine(Word.Buzz());
+                }
+                else
+                    Console.WriteLine(i);
             }
-            else if (Rule.divisibleByThree(i))
-            {
-                Console.WriteLine(Word.Fizz());
-            }
-            else if (Rule.divisibleByFive(i))
-            {
-                Console.WriteLine(Word.Buzz());
-            }
-            else
-                Console.WriteLine(i);
         }
     }
 }
+
+
+
 

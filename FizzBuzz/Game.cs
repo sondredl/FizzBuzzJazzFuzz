@@ -1,19 +1,21 @@
-﻿using System;
-
-public class Rules
+﻿
+namespace FizzBuzz
 {
-    static public bool divisibleByThree(int i)
+    public class Rules
     {
-        return i % 3 == 0;
-    }
+        static public bool DivisibleByThree(int i)
+        {
+            return i % 3 == 0;
+        }
 
-    static public bool divisibleByFive(int i)
-    {
-        return i % 5 == 0;
-    }
+        static public bool DivisibleByFive(int i)
+        {
+            return i % 5 == 0;
+        }
 
-    static public bool divisibleByFifteen(int i)
-    {
-        return i % 15 == 0;
+        static public bool DivisibleByFifteen(int i)
+        {
+            return i % 15 == 0;
+        }
     }
 }
