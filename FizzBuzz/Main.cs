@@ -1,36 +1,48 @@
-﻿using Rule = FizzBuzz.Rules;
+﻿using System.Collections.Generic;
+using Rule = FizzBuzz.Rules;
 using Word = BuzzWords;
 
 namespace FizzBuzz
 {
     public static class Program
     {
-        private static void Main()
+        static void Main()
         {
-            Game game = new Game();
-            Game.Iterator();
+            Game fizzBuzz = new Game();
+            //fizzBuzz.Iterator();
+            //FizzBuzz.GameCase.Case();
+            //List<KeyValuePair<string, int>>? myList = List<KeyValuePair<string, int>>;
+
+            var myList = new List<KeyValuePair<string, int>>
+            {
+                //new KeyValuePair<string, int>("Laptop", 20),
+                //new KeyValuePair<string, int>("Desktop", 40),
+                //new KeyValuePair<string, int>("Tablet", 60),
+                new("Laptop", 20),
+                new("Desktop", 40),
+                new("Tablet", 60)
+            };
+            foreach (var val in myList)
+            {
+                Console.WriteLine(val);
+            }
         }
 
     }
+
+
     public class Game
     {
-        public static void Iterator()
+        static class keyValue
         {
-            for (int i = 1; i < 20; i++)
-            {
-                if (Rule.DivisibleByThree(i))
-                {
-                    Console.WriteLine(Word.Fizz());
-                }
-                if (Rule.DivisibleByFive(i))
-                {
-                    Console.WriteLine(Word.Buzz());
-                }
-                else
-                    Console.WriteLine(i);
-            }
+            //List<KeyValuePair<string, int>>? myList = List<KeyValuePair<string, int>>
+            //{
+            //new ("fizz", 3),
+            //new ("buzz", 5)
+            //}
         }
     }
+    //public string myList { get; set; }
 }
 
 
