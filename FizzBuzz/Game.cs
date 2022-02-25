@@ -22,11 +22,11 @@ namespace FizzBuzz
                 {
                     Console.WriteLine($"{BuzzWords.fizz}{BuzzWords.buzz}");
                 }
-                else if (Rules.DivisibleByThree(i))
+                else if (Rules.DivisibleByThree(i) & !Rules.DivisibleByFive(i))
                 {
                     Console.WriteLine(BuzzWords.fizz);
                 }
-                else if (Rules.DivisibleByFive(i))
+                else if (Rules.DivisibleByFive(i) & !Rules.DivisibleByThree(i))
                 {
                     Console.WriteLine(BuzzWords.buzz);
                 }
@@ -39,11 +39,15 @@ namespace FizzBuzz
         {
             for (int i = iteratorSize; i >= 1; i--)
             {
-                if (Rules.DivisibleByNine(i))
+                if (Rules.DivisibleByNine(i) && Rules.DivisibleByFour(i))
+                {
+                    Console.WriteLine($"{BuzzWords.jazz}{BuzzWords.fuzz}");
+                }
+                else if (Rules.DivisibleByNine(i) & !Rules.DivisibleByFour(i))
                 {
                     Console.WriteLine(BuzzWords.jazz);
                 }
-                else if (Rules.DivisibleByFour(i))
+                else if (Rules.DivisibleByFour(i) & !Rules.DivisibleByNine(i))
                 {
                     Console.WriteLine(BuzzWords.fuzz);
                 }
