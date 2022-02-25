@@ -8,41 +8,35 @@ namespace FizzBuzz
     {
         static void Main()
         {
-            Game fizzBuzz = new Game();
-            //fizzBuzz.Iterator();
-            //FizzBuzz.GameCase.Case();
-            //List<KeyValuePair<string, int>>? myList = List<KeyValuePair<string, int>>;
-
-            var myList = new List<KeyValuePair<string, int>>
-            {
-                //new KeyValuePair<string, int>("Laptop", 20),
-                //new KeyValuePair<string, int>("Desktop", 40),
-                //new KeyValuePair<string, int>("Tablet", 60),
-                new("Laptop", 20),
-                new("Desktop", 40),
-                new("Tablet", 60)
-            };
-            foreach (var val in myList)
-            {
-                Console.WriteLine(val);
-            }
+            Game del_1 = new Game();
+            Game.FizzBuzz();
         }
-
     }
 
 
     public class Game
     {
-        static class keyValue
+        public static void FizzBuzz()
         {
-            //List<KeyValuePair<string, int>>? myList = List<KeyValuePair<string, int>>
-            //{
-            //new ("fizz", 3),
-            //new ("buzz", 5)
-            //}
+            var fizzBuzz = new List<KeyValuePair<string, int>>
+            {
+                new ("Fizz", 3),
+                new ("Buzz", 5)
+            };
+            foreach (var val in fizzBuzz)
+            {
+                Console.WriteLine(val);
+            }
+        }
+        public static void Iterator(int limit)
+        {
+            for (int i = 1; i < limit; i++)
+            {
+                var i = Rule.LoopRules(limit);
+                //Rules(i);
+            }
         }
     }
-    //public string myList { get; set; }
 }
 
 
