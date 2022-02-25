@@ -16,7 +16,7 @@ namespace FizzBuzz
 
         static void Iterator(int iteratorSize)
         {
-            for (int i = 1; i < iteratorSize; i++)
+            for (int i = 1; i <= iteratorSize; i++)
             {
                 if (Rules.DivisibleByThree(i) && Rules.DivisibleByFive(i))
                 {
@@ -37,7 +37,7 @@ namespace FizzBuzz
 
         static void ReverseIterator(int iteratorSize)
         {
-            for (int i = iteratorSize; i > 1; i--)
+            for (int i = iteratorSize; i >= 1; i--)
             {
                 if (Rules.DivisibleByNine(i))
                 {
