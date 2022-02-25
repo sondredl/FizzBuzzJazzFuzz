@@ -3,14 +3,14 @@ namespace FizzBuzz
 {
     public class Game
     {
-        public static void Del_1(Game game, int iteratorSize)
+        public void Del_1(int iteratorSize)
         {
-            Game.Iterator(iteratorSize);
+            Iterator(iteratorSize);
         }
 
-        public static void Del_2(Game game, int iteratorSize)
+        public void Del_2(int iteratorSize)
         {
-            Game.Iterator(iteratorSize);
+            Iterator(iteratorSize);
             ReverseIterator(iteratorSize);
         }
 
