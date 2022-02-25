@@ -1,17 +1,15 @@
 ﻿using Game = FizzBuzz.Game;
-//using Rule = FizzBuzz.Rules;
-//using Word = FizzBuzz.BuzzWords;
 
-Main();
+Play();
 
-static void Main()
+static void Play()
 {
     int iteratorSize = 100;
 
-    Game game_1 = new Game();
+    Game game_1 = new();
     Game.Del_1(game_1, iteratorSize);
 
-    Game game_2 = new Game();
+    Game game_2 = new();
     Game.Del_2(game_2, iteratorSize);
 }
 
