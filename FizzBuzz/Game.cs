@@ -24,31 +24,11 @@ namespace FizzBuzz
             return i % 9 == 0;
         }
     }
-    public class BuzzWords
+    public enum BuzzWords
     {
-        public static string Fizz()
-        {
-            return "fizz";
-        }
-
-        public static string Buzz()
-        {
-            return "buzz";
-        }
-
-        public static string FizzBuzz()
-        {
-            return "fizz buzz";
-        }
-
-        public static string Jazz()
-        {
-            return "jazz";
-        }
-
-        public static string Fuzz()
-        {
-            return "fuzz";
-        }
+        fizz,
+        buzz,
+        jazz,
+        fuzz
     }
 }
