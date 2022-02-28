@@ -1,53 +1,54 @@
-﻿using Rule = FizzBuzz.Rules;
-using Word = FizzBuzz.BuzzWords;
-
-Main();
-
-static void Main()
+﻿
+namespace FizzBuzz
 {
-    int iteratorSize = 100;
-
-    Game game_1 = new Game();
-    Game.Del_1(game_1, iteratorSize);
-
-    Game game_2 = new Game();
-    Game.Del_2(game_2, iteratorSize);
-}
-public class Game
-{
-    public static void Del_1(Game game, int iteratorSize)
+    internal static class Program
     {
-
-        Game.Iterator(iteratorSize);
-    }
-
-    public static void Del_2(Game game, int iteratorSize)
-    {
-        Game.Iterator(iteratorSize);
-        ReverseIterator(iteratorSize);
-    }
-
-
-    static void Iterator(int iteratorSize)
-    {
-        for (int i = 1; i < iteratorSize; i++)
+        private static void Main()
         {
-            if (Rule.DivisibleByThree(i) && Rule.DivisibleByFive(i))
-            {
-                Console.WriteLine(Word.FizzBuzz());
-            }
-            else if (Rule.DivisibleByThree(i))
-            {
-                Console.WriteLine(Word.Fizz());
-            }
-            else if (Rule.DivisibleByFive(i))
-            {
-                Console.WriteLine(Word.Buzz());
-            }
-            else
-                Console.WriteLine(i);
+            int iteratorSize = 100;
+
+            Game game_1 = new();
+            game_1.Del_1(iteratorSize);
+
+            Game game_2 = new();
+            game_2.Del_2(iteratorSize);
         }
     }
+
+
+    public class Game
+    {
+        public void Del_1(int iteratorSize)
+        {
+            Iterator(iteratorSize);
+        }
+
+        public void Del_2(int iteratorSize)
+        {
+            Iterator(iteratorSize);
+            ReverseIterator(iteratorSize);
+        }
+
+        static void Iterator(int iteratorSize)
+        {
+            for (int i = 1; i <= iteratorSize; i++)
+            {
+                if (Rules.DivisibleByThree(i) && Rules.DivisibleByFive(i))
+                {
+                    Console.WriteLine($"{BuzzWords.fizz}{BuzzWords.buzz}");
+                }
+                else if (Rules.DivisibleByThree(i) & !Rules.DivisibleByFive(i))
+                {
+                    Console.WriteLine(BuzzWords.fizz);
+                }
+                else if (Rules.DivisibleByFive(i) & !Rules.DivisibleByThree(i))
+                {
+                    Console.WriteLine(BuzzWords.buzz);
+                }
+                else
+                    Console.WriteLine(i);
+            }
+        }
 
     static void ReverseIterator(int iteratorSize)
     {
@@ -71,6 +72,6 @@ public class Game
     }
 
 
+    }
+
 }
-
-

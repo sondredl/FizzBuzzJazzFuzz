@@ -1,7 +1,6 @@
 ﻿
 namespace FizzBuzz
 {
-
     public class Rules
     {
         static public bool DivisibleByThree(int i)
@@ -24,7 +23,7 @@ namespace FizzBuzz
             return i % 9 == 0;
         }
     }
-    public class BuzzWords
+    public enum BuzzWords
     {
         public static string Fizz()
         {
