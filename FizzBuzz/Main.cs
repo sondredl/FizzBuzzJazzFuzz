@@ -8,24 +8,26 @@ namespace FizzBuzz
         static void Main()
         {
             int iterSize = 100;
+
             List<KeyValuePair<string, int>> Fizz = KeyValue.FizzWords;
             List<KeyValuePair<string, int>> Jazz = KeyValue.JazzWords;
-            Game.Iterator(Fizz, iterSize);
+
             Game game_1 = new();
-            //game_1.Del_1(Fizz, iterSize);
-            Game.Del_1(Fizz, iterSize);
-            Game.Del_2(Fizz, Jazz, iterSize);
+            game_1.Del_1(Fizz, iterSize);
+
+            Game game_2 = new();
+            game_2.Del_2(Fizz, Jazz, iterSize);
         }
     }
 
     public class Game
     {
 
-        public static void Del_1(List<KeyValuePair<string, int>> Fizz, int iteratorSize)
+        public void Del_1(List<KeyValuePair<string, int>> Fizz, int iteratorSize)
         {
             Iterator(Fizz, iteratorSize);
         }
-        public static void Del_2(List<KeyValuePair<string, int>> Fizz, List<KeyValuePair<string, int>> Jazz, int iteratorSize)
+        public void Del_2(List<KeyValuePair<string, int>> Fizz, List<KeyValuePair<string, int>> Jazz, int iteratorSize)
         {
             Iterator(Fizz, iteratorSize);
             ReverseIterator(Jazz, iteratorSize);
