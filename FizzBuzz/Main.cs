@@ -24,54 +24,30 @@ namespace FizzBuzz
         }
 
         public void Del_2(int iteratorSize)
+        public static void Iterator(List<KeyValuePair<string, int>> Fizz, int limit)
         {
             Iterator(iteratorSize);
             ReverseIterator(iteratorSize);
         }
 
         static void Iterator(int iteratorSize)
-        {
-            for (int i = 1; i <= iteratorSize; i++)
+            for (int i = 1; i < limit; i++)
             {
-                if (Rules.DivisibleByThree(i) && Rules.DivisibleByFive(i))
+                string s = "";
+                foreach (KeyValuePair<string, int> kvp in Fizz)
                 {
-                    Console.WriteLine($"{BuzzWords.fizz}{BuzzWords.buzz}");
+                    int k = kvp.Value;
+                    if (Rule.DivisibleByThree(i) && Rule.DivisibleByThree(k)) s += kvp.Key;
+                    if (Rule.DivisibleByFive(i) && Rule.DivisibleByFive(k)) s += kvp.Key;
                 }
-                else if (Rules.DivisibleByThree(i) & !Rules.DivisibleByFive(i))
-                {
-                    Console.WriteLine(BuzzWords.fizz);
-                }
-                else if (Rules.DivisibleByFive(i) & !Rules.DivisibleByThree(i))
-                {
-                    Console.WriteLine(BuzzWords.buzz);
-                }
-                else
-                    Console.WriteLine(i);
+                if (s.Length == 0) Console.WriteLine(i);
+                else Console.WriteLine(s);
+                s = "";
             }
         }
-
-    static void ReverseIterator(int iteratorSize)
-    {
-        for (int i = iteratorSize; i > 1; i--)
-        {
-            if (Rule.DivisibleByNine(i) && Rule.DivisibleByFour(i)
-            {
-                Console.WriteLine(Word.JazzFuzz());
-            }
-            else if (Rule.DivisibleByNine(i))
-            {
-                Console.WriteLine(Word.Jazz());
-            }
-            else if (Rule.DivisibleByFour(i))
-            {
-                Console.WriteLine(Word.Fuzz());
-            }
-            else
-                Console.WriteLine(i);
-        }
     }
-
-
-    }
-
 }
+
+
+
+

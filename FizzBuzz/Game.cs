@@ -1,49 +1,36 @@
 ﻿
 namespace FizzBuzz
 {
-    public class Rules
+    public static class KeyValue
     {
-        static public bool DivisibleByThree(int i)
+        public static List<KeyValuePair<string, int>> FizzWords = new()
+        {
+            new("Fizz", 3),
+            new("Buzz", 5)
+        };
+    }
+
+    public static class Rules
+    {
+        public static bool DivisibleByThree(int i)
         {
             return i % 3 == 0;
         }
 
-        static public bool DivisibleByFour(int i)
-        {
-            return i % 4 == 0;
-        }
-
-        static public bool DivisibleByFive(int i)
+        public static bool DivisibleByFive(int i)
         {
             return i % 5 == 0;
-        }
-
-        static public bool DivisibleByNine(int i)
-        {
-            return i % 9 == 0;
-        }
-    }
-    public enum BuzzWords
-    {
-        public static string Fizz()
-        {
-            return "fizz";
-        }
-
-        public static string Buzz()
-        {
-            return "buzz";
         }
 
         public static string FizzBuzz()
         {
             return "fizz buzz";
-        }
+    }
 
         public static string Jazz()
         {
             return "jazz";
-        }
+}
 
         public static string Fuzz()
         {
