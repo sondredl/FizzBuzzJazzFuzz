@@ -1,5 +1,5 @@
-﻿using Rule = Rules;
-using Word = BuzzWords;
+﻿using Rule = FizzBuzz.Rules;
+using Word = FizzBuzz.BuzzWords;
 
 Main();
 
