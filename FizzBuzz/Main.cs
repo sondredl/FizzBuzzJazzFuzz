@@ -1,7 +1,5 @@
 ﻿using System.Collections.Generic;
 using Rule = FizzBuzz.Rules;
-using Word = FizzBuzz.KeyValue;
-using Dict = FizzBuzz.KeyValue;
 namespace FizzBuzz
 {
     public static class Program
@@ -10,7 +8,8 @@ namespace FizzBuzz
         {
             int iterSize = 100;
             Game del_1 = new Game();
-            List<KeyValuePair<string, int>> Fizz = KeyValue.FizzBuzz;
+            List<KeyValuePair<string, int>> Fizz = KeyValue.FizzWords;
+            //Game.Iterator(Fizz, iterSize);
             Game.Iterator(Fizz, iterSize);
         }
     }

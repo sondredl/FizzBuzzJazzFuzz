@@ -3,7 +3,7 @@ namespace FizzBuzz
 {
     public static class KeyValue
     {
-        public static List<KeyValuePair<string, int>> FizzBuzz = new()
+        public static List<KeyValuePair<string, int>> FizzWords = new()
         {
             new("Fizz", 3),
             new("Buzz", 5)
