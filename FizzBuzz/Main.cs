@@ -1,4 +1,6 @@
-﻿
+﻿using Rule = FizzBuzz.Rules;
+using Word = FizzBuzz.KeyValue;
+
 namespace FizzBuzz
 {
     internal static class Program
@@ -18,20 +20,24 @@ namespace FizzBuzz
 
     public class Game
     {
-        public void Del_1(int iteratorSize)
+        public static void Del_1(int iteratorSize)
         {
             Iterator(iteratorSize);
         }
 
-        public void Del_2(int iteratorSize)
+        public static void Del_2(int iteratorSize)
+        {
+            Iterator(iteratorSize);
+            ReverseIterator(iteratorSize);
+        }
         public static void Iterator(List<KeyValuePair<string, int>> Fizz, int limit)
         {
             Iterator(iteratorSize);
             ReverseIterator(iteratorSize);
         }
 
-        static void Iterator(int iteratorSize)
-            for (int i = 1; i < limit; i++)
+        static void Iterator(KeyValuePair<string, int> Fizz, int iteratorSize)
+            for (int i = 1; i<iteratorSize; i++)
             {
                 string s = "";
                 foreach (KeyValuePair<string, int> kvp in Fizz)
@@ -44,6 +50,21 @@ namespace FizzBuzz
                 else Console.WriteLine(s);
                 s = "";
             }
+        }
+        static void ReverseIterator(int limit)
+            for (int i = 1; i > limit; i++)
+{
+    string s = "";
+    foreach (KeyValuePair<string, int> kvp in Fizz)
+    {
+        int k = kvp.Value;
+        if (Rule.DivisibleByThree(i) && Rule.DivisibleByThree(k)) s += kvp.Key;
+        if (Rule.DivisibleByFive(i) && Rule.DivisibleByFive(k)) s += kvp.Key;
+    }
+    if (s.Length == 0) Console.WriteLine(i);
+    else Console.WriteLine(s);
+    s = "";
+}
         }
     }
 }
