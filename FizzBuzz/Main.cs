@@ -8,9 +8,9 @@ namespace FizzBuzz
     {
         static void Main()
         {
-            int iterSize = 20;
+            int iterSize = 100;
             Game del_1 = new Game();
-            List<KeyValuePair<string, int>> Fizz = KeyValue.Fizz;
+            List<KeyValuePair<string, int>> Fizz = KeyValue.FizzBuzz;
             Game.Iterator(Fizz, iterSize);
         }
     }
@@ -25,15 +25,12 @@ namespace FizzBuzz
             for (int i = 1; i < limit; i++)
             {
                 string s = "";
-                string Word = Fizz[0].Key;
                 foreach (KeyValuePair<string, int> kvp in Fizz)
                 {
-                    if (kvp.Value == i)
-                        s += kvp.Key;
-
-
+                    int k = kvp.Value;
+                    if (Rule.DivisibleByThree(i) && Rule.DivisibleByThree(k)) s += kvp.Key;
+                    if (Rule.DivisibleByFive(i) && Rule.DivisibleByFive(k)) s += kvp.Key;
                 }
-
                 if (s.Length == 0) Console.WriteLine(i);
                 else Console.WriteLine(s);
                 s = "";
