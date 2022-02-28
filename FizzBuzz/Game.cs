@@ -50,5 +50,9 @@ namespace FizzBuzz
         {
             return "fuzz";
         }
+        public static string JazzFuzz()
+        {
+            return "JazzFuzz";
+        }
     }
 }

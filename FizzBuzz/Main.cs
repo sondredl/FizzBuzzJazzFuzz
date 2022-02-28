@@ -53,7 +53,11 @@ public class Game
     {
         for (int i = iteratorSize; i > 1; i--)
         {
-            if (Rule.DivisibleByNine(i))
+            if (Rule.DivisibleByNine(i) && Rule.DivisibleByFour(i)
+            {
+                Console.WriteLine(Word.JazzFuzz());
+            }
+            else if (Rule.DivisibleByNine(i))
             {
                 Console.WriteLine(Word.Jazz());
             }
