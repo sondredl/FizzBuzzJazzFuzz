@@ -16,7 +16,6 @@ namespace FizzBuzz
     public class Game
     {
 
-        public static void Run() { }
         public static void Iterator(List<KeyValuePair<string, int>> Fizz, int limit)
         {
             for (int i = 1; i < limit; i++)
