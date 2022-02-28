@@ -1,38 +1,26 @@
-﻿using System;
-
+﻿
 namespace FizzBuzz
 {
-
-    public class Rules
+    public static class KeyValue
     {
-        static public bool divisibleByThree(int i)
+        public static List<KeyValuePair<string, int>> FizzBuzz = new()
+        {
+            new("Fizz", 3),
+            new("Buzz", 5)
+        };
+    }
+
+    public static class Rules
+    {
+        public static bool DivisibleByThree(int i)
         {
             return i % 3 == 0;
         }
 
-        static public bool divisibleByFive(int i)
+        public static bool DivisibleByFive(int i)
         {
             return i % 5 == 0;
         }
-
-        static public bool divisibleByFifteen(int i)
-        {
-            return i % 15 == 0;
-        }
-    }
-    public class BuzzWords
-    {
-        public static string FizzBuzz()
-        {
-            return "fizz buzz";
-        }
-        public static string Fizz()
-        {
-            return "fizz";
-        }
-        public static string Buzz()
-        {
-            return "buzz";
-        }
     }
 }
+

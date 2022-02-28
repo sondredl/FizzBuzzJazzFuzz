@@ -1,35 +1,44 @@
-﻿using Rule = FizzBuzz.Rules;
-using Word = FizzBuzz.BuzzWords;
-
-Main();
-
-static void Main()
+﻿using System.Collections.Generic;
+using Rule = FizzBuzz.Rules;
+using Word = FizzBuzz.KeyValue;
+using Dict = FizzBuzz.KeyValue;
+namespace FizzBuzz
 {
-    Game game = new Game();
-    Game.Iterator();
-}
-
-public class Game
-{
-    public static void Iterator()
+    public static class Program
     {
-        for (int i = 1; i < 20; i++)
+        static void Main()
         {
-            if (Rule.divisibleByFifteen(i))
+            int iterSize = 100;
+            Game del_1 = new Game();
+            List<KeyValuePair<string, int>> Fizz = KeyValue.FizzBuzz;
+            Game.Iterator(Fizz, iterSize);
+        }
+    }
+
+
+    public class Game
+    {
+
+        public static void Run() { }
+        public static void Iterator(List<KeyValuePair<string, int>> Fizz, int limit)
+        {
+            for (int i = 1; i < limit; i++)
             {
-                Console.WriteLine(Word.FizzBuzz());
+                string s = "";
+                foreach (KeyValuePair<string, int> kvp in Fizz)
+                {
+                    int k = kvp.Value;
+                    if (Rule.DivisibleByThree(i) && Rule.DivisibleByThree(k)) s += kvp.Key;
+                    if (Rule.DivisibleByFive(i) && Rule.DivisibleByFive(k)) s += kvp.Key;
+                }
+                if (s.Length == 0) Console.WriteLine(i);
+                else Console.WriteLine(s);
+                s = "";
             }
-            else if (Rule.divisibleByThree(i))
-            {
-                Console.WriteLine(Word.Fizz());
-            }
-            else if (Rule.divisibleByFive(i))
-            {
-                Console.WriteLine(Word.Buzz());
-            }
-            else
-                Console.WriteLine(i);
         }
     }
 }
+
+
+
 
