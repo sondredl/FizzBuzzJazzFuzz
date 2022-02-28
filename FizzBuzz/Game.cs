@@ -1,6 +1,22 @@
 ﻿
 namespace FizzBuzz
 {
+    public static class KeyValue
+    {
+        public static List<KeyValuePair<string, int>> Fizz = new()
+        {
+            new("Fizz", 3),
+            new("Buzz", 5)
+        };
+        //foreach (var val in Fizz)
+        //{
+        //    Console.WriteLine(val);
+        //}
+        //public static List<Dictionary<string>> Buzz = new()
+
+
+
+    }
 
     public class GameCase
     {
