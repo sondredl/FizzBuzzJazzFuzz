@@ -7,9 +7,7 @@ namespace FizzBuzz
         static void Main()
         {
             int iterSize = 100;
-            Game del_1 = new Game();
             List<KeyValuePair<string, int>> Fizz = KeyValue.FizzWords;
-            //Game.Iterator(Fizz, iterSize);
             Game.Iterator(Fizz, iterSize);
         }
     }
