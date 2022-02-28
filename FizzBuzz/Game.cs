@@ -8,6 +8,12 @@ namespace FizzBuzz
             new("Fizz", 3),
             new("Buzz", 5)
         };
+
+        public static List<KeyValuePair<string, int>> JazzWords = new()
+        {
+            new("Jazz", 9),
+            new("Fuzz", 4)
+        };
     }
 
     public static class Rules
@@ -16,29 +22,19 @@ namespace FizzBuzz
         {
             return i % 3 == 0;
         }
-
+        public static bool DivisibleByFour(int i)
+        {
+            return i % 4 == 0;
+        }
         public static bool DivisibleByFive(int i)
         {
             return i % 5 == 0;
         }
-
-        public static string FizzBuzz()
+        public static bool DivisibleByNine(int i)
         {
-            return "fizz buzz";
-    }
-
-        public static string Jazz()
-        {
-            return "jazz";
-}
-
-        public static string Fuzz()
-        {
-            return "fuzz";
+            return i % 9 == 0;
         }
-        public static string JazzFuzz()
-        {
-            return "JazzFuzz";
-        }
+
+
     }
 }
