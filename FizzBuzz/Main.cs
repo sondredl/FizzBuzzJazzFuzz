@@ -1,43 +1,42 @@
 ﻿using System.Collections.Generic;
 using Rule = FizzBuzz.Rules;
 using Word = FizzBuzz.KeyValue;
-//using Word = FizzBuzz.KeyValue;
-
+using Dict = FizzBuzz.KeyValue;
 namespace FizzBuzz
 {
     public static class Program
     {
         static void Main()
         {
-            int iterSize = 100;
-            //KeyValue KV = KeyValue.Fizz;
+            int iterSize = 20;
             Game del_1 = new Game();
-            //List Fizz = new List();
-            Game.Iterator(iterSize, FizzBuzz.KeyValue Fizz);
+            List<KeyValuePair<string, int>> Fizz = KeyValue.Fizz;
+            Game.Iterator(Fizz, iterSize);
         }
     }
 
 
     public class Game
     {
-        //public static object KeyValue { get; private set; }
 
         public static void Run() { }
-        public static void Iterator(int limit, KeyValuePair Fizz)
+        public static void Iterator(List<KeyValuePair<string, int>> Fizz, int limit)
         {
             for (int i = 1; i < limit; i++)
             {
-                string Word = Fizz[0];
-                int WordValue = Fizz[1];
-                string PrintString = "";
-
-                if (WordValue == i)
+                string s = "";
+                string Word = Fizz[0].Key;
+                foreach (KeyValuePair<string, int> kvp in Fizz)
                 {
-                    PrintString += Word;
-                    Console.WriteLine(PrintString);
+                    if (kvp.Value == i)
+                        s += kvp.Key;
+
+
                 }
-                //var i = Rule.LoopRules(limit);
-                //Rules(i);
+
+                if (s.Length == 0) Console.WriteLine(i);
+                else Console.WriteLine(s);
+                s = "";
             }
         }
     }
