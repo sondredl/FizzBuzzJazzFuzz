@@ -1,7 +1,4 @@
-﻿// using Rule = FizzBuzz.Rules;
-using Word = FizzBuzz.KeyValue;
-
-namespace FizzBuzz
+﻿namespace FizzBuzzJazzFuzz
 {
     public static class Program
     {
@@ -11,43 +8,56 @@ namespace FizzBuzz
 
             List<KeyValuePair<string, int>> Fizz = KeyValue.FizzWords;
             List<KeyValuePair<string, int>> Jazz = KeyValue.JazzWords;
+            List<KeyValuePair<string, int>> Test = KeyValue.TestWords;
 
-            // Game game_1 = new();
-            // game_1.Del_1(Fizz, iterSize);
-
-            Game game_2 = new();
-            game_2.Del_2(Fizz, Jazz, iterSize);
+            Game.FizzBuzz(Fizz, iterSize);
         }
     }
 
     public class Game
     {
 
-        public void Del_1(List<KeyValuePair<string, int>> Fizz, int iteratorSize)
+        public static void FizzBuzz(List<KeyValuePair<string, int>> Fizz, int iteratorSize)
         {
-            Iterator(Fizz, iteratorSize);
-        }
-        public void Del_2(List<KeyValuePair<string, int>> Fizz, List<KeyValuePair<string, int>> Jazz, int iteratorSize)
-        {
-            Iterator(Fizz, iteratorSize);
-            ReverseIterator(Jazz, iteratorSize);
+            Array printwords = Iterator(Fizz, iteratorSize);
+            Printer(printwords);
         }
 
-        public static void Iterator(List<KeyValuePair<string, int>> Fizz, int limit)
+        public void JazzFuzz(List<KeyValuePair<string, int>> Fizz, List<KeyValuePair<string, int>> Jazz, int iteratorSize)
         {
-            for (int i = 1; i < limit; i++)
+            Array printwords = Iterator(Jazz, iteratorSize);
+            Printer(printwords);
+        }
+
+        public static Array Iterator(List<KeyValuePair<string, int>> Fizz, int limit)
+        {
+            string[] printWords = new string[limit];
+
+            for (int i = 0; i < limit; i++)
             {
                 string s = "";
                 foreach (KeyValuePair<string, int> kvp in Fizz)
                 {
                     int k = kvp.Value;
+                    // insert error handlig here
                     if (Divisible(i, k)) s += kvp.Key;
                 }
-                if (s.Length == 0) Console.WriteLine(i);
-                else Console.WriteLine(s);
-                s = "";
+                if (s.Length == 0)
+                {
+                    string s2 = i.ToString();
+                    printWords[i] = s2;
+                }
+                else printWords[i] = s;
             }
+            return printWords;
         }
+
+        public static void Printer(Array arr)
+        {
+            foreach (string str in arr)
+                Console.WriteLine(str);
+        }
+
         public static void ReverseIterator(List<KeyValuePair<string, int>> Jazz, int limit)
         {
             for (int i = limit; 0 < i; i--)
@@ -63,9 +73,45 @@ namespace FizzBuzz
                 s = "";
             }
         }
+
         public static bool Divisible(int i, int k)
         {
             return i % k == 0;
         }
+
     }
+    public static class KeyValue
+    {
+        public static List<KeyValuePair<string, int>> FizzWords = new()
+        {
+            new("Fizz", 3),
+            new("Buzz", 5)
+        };
+
+        public static List<KeyValuePair<string, int>> JazzWords = new()
+        {
+            new("Jazz", 9),
+            new("Fuzz", 4)
+        };
+
+        public static List<KeyValuePair<string, int>> TestWords = new()
+        {
+            new("Kizz", 2),
+            new("Bozz", 6),
+            new("Lezz", 7)
+        };
+    }
+
 }
+/*
+    char[] apple = { 'a', 'p', 'p', 'l', 'e' };
+    char[] reversed = apple.Reverse().ToArray();
+foreach (char chr in reversed)
+    Console.Write(chr + " ");
+}
+Console.WriteLine();
+
+ This code produces the following output:
+
+ e l p p a
+*/
