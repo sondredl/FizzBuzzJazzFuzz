@@ -1,6 +1,4 @@
-﻿using System;
-using Xunit;
-
+﻿
 namespace FizzBuzzJazzFuzz
 {
     public static class Program
@@ -13,9 +11,9 @@ namespace FizzBuzzJazzFuzz
             List<KeyValuePair<string, int>> Jazz = KeyValue.JazzWords;
             List<KeyValuePair<string, int>> Test = KeyValue.TestWords;
 
-            Game.FizzBuzz(Fizz, iterSize);
+            //Game.FizzBuzz(Fizz, iterSize);
 
-            // Game.JazzFuzz(Fizz, iterSize);
+            Game.JazzFuzz(Jazz, iterSize);
         }
     }
 
@@ -24,20 +22,22 @@ namespace FizzBuzzJazzFuzz
 
         public static void FizzBuzz(List<KeyValuePair<string, int>> Fizz, int iteratorSize)
         {
-            Array printWords = Iterator(Fizz, iteratorSize);
+            string[] printWords = Iterator(Fizz, iteratorSize);
             Printer(printWords);
         }
 
-        public static void JazzFuzz(List<KeyValuePair<string, int>> Fizz, List<KeyValuePair<string, int>> Jazz, int iteratorSize)
+        public static void JazzFuzz(List<KeyValuePair<string, int>> Jazz, int iteratorSize)
         {
-            Array printWords = Iterator(Jazz, iteratorSize);
-            // string[] printWordsReverse = printWords.Reverse(printWords);
-            Array printWordsReverse = ReverseOrder(printWords);
-            // Array printWordsReverse = printWords.Reverse().ToArray();
+            //Array printWords = Iterator(Jazz, iteratorSize);
+            string[] printWords = Iterator(Jazz, iteratorSize);
             Printer(printWords);
+
+            //Array printWordsReverse = ReverseOrder(printWords, iteratorSize);
+            string[] printWordsReverse = ReverseOrder(printWords, iteratorSize);
+            Printer(printWordsReverse);
         }
 
-        public static Array Iterator(List<KeyValuePair<string, int>> Fizz, int limit)
+        public static string[] Iterator(List<KeyValuePair<string, int>> Fizz, int limit)
         {
             string[] printWords = new string[limit];
             string[] printWordsReverse = printWords.Reverse().ToArray();
@@ -48,7 +48,6 @@ namespace FizzBuzzJazzFuzz
                 foreach (KeyValuePair<string, int> kvp in Fizz)
                 {
                     int k = kvp.Value;
-                    // insert error handlig here
                     if (Divisible(i, k)) s += kvp.Key;
                 }
                 if (s.Length == 0)
@@ -61,19 +60,20 @@ namespace FizzBuzzJazzFuzz
             return printWords;
         }
 
-        public class ValidityTest
-        {
-            [Fact]
-
-        }
-
         public static bool Divisible(int i, int k)
         {
             return i % k == 0;
         }
-        public static Array ReverseOrder(Array arr)
+        public static string[] ReverseOrder(string[] arr, int size)
         {
-            Array revArr = arr.Reverse(arr);
+            string[] revArr = new string[size];
+            //revArr = arr.Reverse();
+            for (int i = size; i > 0; i--)
+            {
+                //        revArr[i] = arr[size - i];
+                Console.WriteLine(revArr[i]);
+                Console.WriteLine(arr[i]);
+            }
             return revArr;
         }
 
