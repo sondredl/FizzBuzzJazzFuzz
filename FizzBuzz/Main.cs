@@ -1,4 +1,7 @@
-﻿namespace FizzBuzzJazzFuzz
+﻿using System;
+using Xunit;
+
+namespace FizzBuzzJazzFuzz
 {
     public static class Program
     {
@@ -21,19 +24,23 @@
 
         public static void FizzBuzz(List<KeyValuePair<string, int>> Fizz, int iteratorSize)
         {
-            Array printwords = Iterator(Fizz, iteratorSize);
-            Printer(printwords);
+            Array printWords = Iterator(Fizz, iteratorSize);
+            Printer(printWords);
         }
 
-        public void JazzFuzz(List<KeyValuePair<string, int>> Fizz, List<KeyValuePair<string, int>> Jazz, int iteratorSize)
+        public static void JazzFuzz(List<KeyValuePair<string, int>> Fizz, List<KeyValuePair<string, int>> Jazz, int iteratorSize)
         {
-            Array printwords = Iterator(Jazz, iteratorSize);
-            Printer(printwords);
+            Array printWords = Iterator(Jazz, iteratorSize);
+            // string[] printWordsReverse = printWords.Reverse(printWords);
+            Array printWordsReverse = ReverseOrder(printWords);
+            // Array printWordsReverse = printWords.Reverse().ToArray();
+            Printer(printWords);
         }
 
         public static Array Iterator(List<KeyValuePair<string, int>> Fizz, int limit)
         {
             string[] printWords = new string[limit];
+            string[] printWordsReverse = printWords.Reverse().ToArray();
 
             for (int i = 0; i < limit; i++)
             {
@@ -54,25 +61,20 @@
             return printWords;
         }
 
-        public static void ReverseIterator(List<KeyValuePair<string, int>> Jazz, int limit)
+        public class ValidityTest
         {
-            for (int i = limit; 0 < i; i--)
-            {
-                string s = "";
-                foreach (KeyValuePair<string, int> kvp in Jazz)
-                {
-                    int k = kvp.Value;
-                    if (Divisible(i, k)) s += kvp.Key;
-                }
-                if (s.Length == 0) Console.WriteLine(i);
-                else Console.WriteLine(s);
-                s = "";
-            }
+            [Fact]
+
         }
 
         public static bool Divisible(int i, int k)
         {
             return i % k == 0;
+        }
+        public static Array ReverseOrder(Array arr)
+        {
+            Array revArr = arr.Reverse(arr);
+            return revArr;
         }
 
         public static void Printer(Array arr)
@@ -106,14 +108,20 @@
 
 }
 /*
-    char[] apple = { 'a', 'p', 'p', 'l', 'e' };
-    char[] reversed = apple.Reverse().ToArray();
-foreach (char chr in reversed)
-    Console.Write(chr + " ");
-}
-Console.WriteLine();
 
- This code produces the following output:
-
- e l p p a
+        public static void ReverseIterator(List<KeyValuePair<string, int>> Jazz, int limit)
+        {
+            for (int i = limit; 0 < i; i--)
+            {
+                string s = "";
+                foreach (KeyValuePair<string, int> kvp in Jazz)
+                {
+                    int k = kvp.Value;
+                    if (Divisible(i, k)) s += kvp.Key;
+                }
+                if (s.Length == 0) Console.WriteLine(i);
+                else Console.WriteLine(s);
+                s = "";
+            }
+        }
 */
