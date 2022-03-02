@@ -1,4 +1,4 @@
-﻿using Rule = FizzBuzz.Rules;
+﻿// using Rule = FizzBuzz.Rules;
 using Word = FizzBuzz.KeyValue;
 
 namespace FizzBuzz
@@ -7,13 +7,13 @@ namespace FizzBuzz
     {
         static void Main()
         {
-            int iterSize = 100;
+            int iterSize = 40;
 
             List<KeyValuePair<string, int>> Fizz = KeyValue.FizzWords;
             List<KeyValuePair<string, int>> Jazz = KeyValue.JazzWords;
 
-            Game game_1 = new();
-            game_1.Del_1(Fizz, iterSize);
+            // Game game_1 = new();
+            // game_1.Del_1(Fizz, iterSize);
 
             Game game_2 = new();
             game_2.Del_2(Fizz, Jazz, iterSize);
@@ -41,8 +41,7 @@ namespace FizzBuzz
                 foreach (KeyValuePair<string, int> kvp in Fizz)
                 {
                     int k = kvp.Value;
-                    if (Rule.DivisibleByThree(i) && Rule.DivisibleByThree(k)) s += kvp.Key;
-                    if (Rule.DivisibleByFive(i) && Rule.DivisibleByFive(k)) s += kvp.Key;
+                    if (Divisible(i, k)) s += kvp.Key;
                 }
                 if (s.Length == 0) Console.WriteLine(i);
                 else Console.WriteLine(s);
@@ -57,13 +56,16 @@ namespace FizzBuzz
                 foreach (KeyValuePair<string, int> kvp in Jazz)
                 {
                     int k = kvp.Value;
-                    if (Rule.DivisibleByNine(i) && Rule.DivisibleByNine(k)) s += kvp.Key;
-                    if (Rule.DivisibleByFour(i) && Rule.DivisibleByFour(k)) s += kvp.Key;
+                    if (Divisible(i, k)) s += kvp.Key;
                 }
                 if (s.Length == 0) Console.WriteLine(i);
                 else Console.WriteLine(s);
                 s = "";
             }
+        }
+        public static bool Divisible(int i, int k)
+        {
+            return i % k == 0;
         }
     }
 }
