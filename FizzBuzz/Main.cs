@@ -11,6 +11,8 @@
             List<KeyValuePair<string, int>> Test = KeyValue.TestWords;
 
             Game.FizzBuzz(Fizz, iterSize);
+
+            // Game.JazzFuzz(Fizz, iterSize);
         }
     }
 
@@ -52,12 +54,6 @@
             return printWords;
         }
 
-        public static void Printer(Array arr)
-        {
-            foreach (string str in arr)
-                Console.WriteLine(str);
-        }
-
         public static void ReverseIterator(List<KeyValuePair<string, int>> Jazz, int limit)
         {
             for (int i = limit; 0 < i; i--)
@@ -77,6 +73,12 @@
         public static bool Divisible(int i, int k)
         {
             return i % k == 0;
+        }
+
+        public static void Printer(Array arr)
+        {
+            foreach (string str in arr)
+                Console.WriteLine(str);
         }
 
     }
