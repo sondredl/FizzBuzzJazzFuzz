@@ -1,4 +1,5 @@
-﻿
+﻿using Xunit;
+
 namespace FizzBuzzJazzFuzz
 {
     public static class Program
@@ -42,7 +43,7 @@ namespace FizzBuzzJazzFuzz
             string[] printWords = new string[limit];
             string[] printWordsReverse = printWords.Reverse().ToArray();
 
-            for (int i = 0; i < limit; i++)
+            for (int i = 1; i <= limit; i++)
             {
                 string s = "";
                 foreach (KeyValuePair<string, int> kvp in Fizz)
@@ -64,6 +65,7 @@ namespace FizzBuzzJazzFuzz
         {
             return i % k == 0;
         }
+
         public static string[] ReverseOrder(string[] arr, int size)
         {
             string[] revArr = new string[size];
@@ -107,21 +109,3 @@ namespace FizzBuzzJazzFuzz
     }
 
 }
-/*
-
-        public static void ReverseIterator(List<KeyValuePair<string, int>> Jazz, int limit)
-        {
-            for (int i = limit; 0 < i; i--)
-            {
-                string s = "";
-                foreach (KeyValuePair<string, int> kvp in Jazz)
-                {
-                    int k = kvp.Value;
-                    if (Divisible(i, k)) s += kvp.Key;
-                }
-                if (s.Length == 0) Console.WriteLine(i);
-                else Console.WriteLine(s);
-                s = "";
-            }
-        }
-*/
