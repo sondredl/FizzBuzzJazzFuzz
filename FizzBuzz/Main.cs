@@ -10,11 +10,8 @@ namespace FizzBuzzJazzFuzz
             List<KeyValuePair<string, int>> Jazz = KeyValue.JazzWords;
             List<KeyValuePair<string, int>> Test = KeyValue.TestWords;
 
-            int iteratorSize = 40;
-
-            Game.FizzBuzz(Fizz, iteratorSize);
-            // Game.JazzFuzz(Jazz, iterSize);
-
+            Game.FizzBuzz(Fizz, iterSize);
+            Game.JazzFuzz(Jazz, iterSize);
         }
     }
 
@@ -30,20 +27,15 @@ namespace FizzBuzzJazzFuzz
 
         public static void JazzFuzz(List<KeyValuePair<string, int>> Jazz, int iteratorSize)
         {
-            // Array printWords = Iterator(Jazz, iteratorSize);
-            // string[] printWords = Iterator(Jazz, iteratorSize);
-            // Printer(printWords);
-
-            //Array printWordsReverse = ReverseOrder(printWords, iteratorSize);
-            // string[] printWordsReverse = ReverseOrder(printWords, iteratorSize);
-            // Printer(printWordsReverse);
+            Array printwords = Iterator(Jazz, iteratorSize);
+            ReversePrinter(printwords);
         }
 
         public static string[] Iterator(List<KeyValuePair<string, int>> Fizz, int limit, string[] printWords)
         {
             // string[] printWords = new string[limit];
 
-            for (int i = 0; i <= limit; i++)
+            for (int i = 1; i < limit; i++)
             {
                 string s = "";
                 foreach (KeyValuePair<string, int> kvp in Fizz)
@@ -69,10 +61,9 @@ namespace FizzBuzzJazzFuzz
 
         public static void ReversePrinter(Array arr)
         {
-            for (var i = arr.Length; i > 1; i--)
+            for (int i = arr.Length - 1; i > 0; i--)
             {
-                string str = (string)arr.GetValue(i);
-                Console.WriteLine(str);
+                Console.WriteLine(arr.GetValue(i));
             }
         }
 
