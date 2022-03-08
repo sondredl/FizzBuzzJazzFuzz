@@ -10,6 +10,8 @@ namespace FizzBuzzJazzFuzz
             List<KeyValuePair<string, int>> Jazz = KeyValue.JazzWords;
             List<KeyValuePair<string, int>> Test = KeyValue.TestWords;
 
+            int iterSize = 40;
+
             Game.FizzBuzz(Fizz, iterSize);
             Game.JazzFuzz(Jazz, iterSize);
         }
@@ -21,7 +23,7 @@ namespace FizzBuzzJazzFuzz
         public static void FizzBuzz(List<KeyValuePair<string, int>> Fizz, int iteratorSize)
         {
             string[] printWords = new string[iteratorSize];
-            printWords = Iterator(Fizz, iteratorSize, printWords);
+            printWords = Iterator(Fizz, iteratorSize;
             Printer(printWords);
         }
 
@@ -31,7 +33,7 @@ namespace FizzBuzzJazzFuzz
             ReversePrinter(printwords);
         }
 
-        public static string[] Iterator(List<KeyValuePair<string, int>> Fizz, int limit, string[] printWords)
+        public static string[] Iterator(List<KeyValuePair<string, int>> Fizz, int limit)
         {
             // string[] printWords = new string[limit];
 
