@@ -26,7 +26,7 @@ namespace FizzBuzzJazzFuzz
         public static void FizzBuzz(List<KeyValuePair<string, int>> Fizz, string[] printWords, int iteratorSize)
         {
             printWords = Iterator(Fizz, printWords, iteratorSize);
-            Printer(printWords);
+            // Printer(printWords);
         }
 
         public static void JazzFuzz(List<KeyValuePair<string, int>> Jazz, int iteratorSize)
@@ -58,21 +58,22 @@ namespace FizzBuzzJazzFuzz
                 }
                 else printWords[i] = s;
             }
+            Console.WriteLine(printWords);
             return printWords;
         }
 
-        public static string[] ReverseOrder(string[] arr, int size)
-        {
-            string[] revArr = new string[size];
-            //revArr = arr.Reverse();
-            for (int i = size; i > 0; i--)
-            {
-                //        revArr[i] = arr[size - i];
-                Console.WriteLine(revArr[i]);
-                Console.WriteLine(arr[i]);
-            }
-            return revArr;
-        }
+        // public static string[] ReverseOrder(string[] arr, int size)
+        // {
+        //     string[] revArr = new string[size];
+        //     //revArr = arr.Reverse();
+        //     for (int i = size; i > 0; i--)
+        //     {
+        //         //        revArr[i] = arr[size - i];
+        //         Console.WriteLine(revArr[i]);
+        //         Console.WriteLine(arr[i]);
+        //     }
+        //     return revArr;
+        // }
 
         public static void Printer(Array arr)
         {
