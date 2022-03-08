@@ -12,8 +12,6 @@ namespace FizzBuzzJazzFuzz
 
             int iteratorSize = 40;
 
-            //             string[] printWords = new string[iteratorSize];//  = Iterator(Fizz, iteratorSize);
-
             Game.FizzBuzz(Fizz, iteratorSize);
             // Game.JazzFuzz(Jazz, iterSize);
 
@@ -25,7 +23,8 @@ namespace FizzBuzzJazzFuzz
 
         public static void FizzBuzz(List<KeyValuePair<string, int>> Fizz, int iteratorSize)
         {
-            string[] printWords = Iterator(Fizz, iteratorSize);
+            string[] printWords = new string[iteratorSize];
+            printWords = Iterator(Fizz, iteratorSize, printWords);
             Printer(printWords);
         }
 
@@ -40,9 +39,9 @@ namespace FizzBuzzJazzFuzz
             // Printer(printWordsReverse);
         }
 
-        public static string[] Iterator(List<KeyValuePair<string, int>> Fizz, int limit)
+        public static string[] Iterator(List<KeyValuePair<string, int>> Fizz, int limit, string[] printWords)
         {
-            string[] printWords = new string[limit];
+            // string[] printWords = new string[limit];
 
             for (int i = 0; i <= limit; i++)
             {
@@ -68,7 +67,7 @@ namespace FizzBuzzJazzFuzz
                 Console.WriteLine(str);
         }
 
-        public static void ReversePrinter(Array arr, int size)
+        public static void ReversePrinter(Array arr)
         {
             for (var i = arr.Length; i > 1; i--)
             {
