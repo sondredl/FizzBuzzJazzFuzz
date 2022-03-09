@@ -23,7 +23,7 @@ namespace FizzBuzzJazzFuzz
         public static void FizzBuzz(List<KeyValuePair<string, int>> Fizz, int iteratorSize)
         {
             string[] printWords = new string[iteratorSize];
-            printWords = Iterator(Fizz, iteratorSize;
+            printWords = Iterator(Fizz, iteratorSize);
             Printer(printWords);
         }
 
@@ -36,6 +36,7 @@ namespace FizzBuzzJazzFuzz
         public static string[] Iterator(List<KeyValuePair<string, int>> Fizz, int limit)
         {
             // string[] printWords = new string[limit];
+            string[] printWords = new string[limit];
 
             for (int i = 1; i < limit; i++)
             {
