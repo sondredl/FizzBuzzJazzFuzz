@@ -29,7 +29,6 @@ namespace FizzBuzzJazzFuzz
 
         public static void JazzFuzz(List<KeyValuePair<string, int>> Jazz, int iteratorSize)
         {
-            // Array printwords = Iterator(Jazz, iteratorSize);
             string[] printWords = new string[iteratorSize];
             printWords = Iterator(Jazz, iteratorSize);
             ReversePrinter(printWords);
