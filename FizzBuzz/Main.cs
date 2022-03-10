@@ -29,8 +29,10 @@ namespace FizzBuzzJazzFuzz
 
         public static void JazzFuzz(List<KeyValuePair<string, int>> Jazz, int iteratorSize)
         {
-            Array printwords = Iterator(Jazz, iteratorSize);
-            ReversePrinter(printwords);
+            // Array printwords = Iterator(Jazz, iteratorSize);
+            string[] printWords = new string[iteratorSize];
+            printWords = Iterator(Jazz, iteratorSize);
+            ReversePrinter(printWords);
         }
 
         public static string[] Iterator(List<KeyValuePair<string, int>> Fizz, int limit)
@@ -61,15 +63,17 @@ namespace FizzBuzzJazzFuzz
 
         public static void Printer(Array arr)
         {
-            foreach (string str in arr)
-                Console.WriteLine(str);
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.WriteLine("[" + i + "] " + arr.GetValue(i));
+            }
         }
 
         public static void ReversePrinter(Array arr)
         {
-            for (int i = arr.Length - 1; i > 0; i--)
+            for (int i = arr.Length - 1; i >= 0; i--)
             {
-                Console.WriteLine(arr.GetValue(i));
+                Console.WriteLine("[" + i + "] " + arr.GetValue(i));
             }
         }
 
