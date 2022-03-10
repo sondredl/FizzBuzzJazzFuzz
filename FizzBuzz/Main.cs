@@ -35,23 +35,26 @@ namespace FizzBuzzJazzFuzz
 
         public static string[] Iterator(List<KeyValuePair<string, int>> Fizz, int limit)
         {
-            // string[] printWords = new string[limit];
             string[] printWords = new string[limit];
 
-            for (int i = 1; i < limit; i++)
+            for (int i = 0; i < limit; i++)
             {
+                int j = i + 1;
                 string s = "";
                 foreach (KeyValuePair<string, int> kvp in Fizz)
                 {
                     int k = kvp.Value;
-                    if (Divisible(i, k)) s += kvp.Key;
+                    if (Divisible(j, k)) s += kvp.Key;
                 }
                 if (s.Length == 0)
                 {
-                    string s2 = i.ToString();
+                    string s2 = j.ToString();
                     printWords[i] = s2;
                 }
-                else printWords[i] = s;
+                else
+                {
+                    printWords[i] = s;
+                }
             }
             return printWords;
         }
